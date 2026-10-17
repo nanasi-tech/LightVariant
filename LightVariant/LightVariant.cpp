@@ -19,11 +19,7 @@ Compoundで型消去して参照を効率よく保持するというものを開
 */
 
 #include <iostream>
-#include "include/T_BaseVariantObject.h"
-#include "include/T_ObjectHeader.h"
-#include "include/T_Policy.h"
-#include "include/T_VariantObject.h"
-
+#include "include/NS/LightVariant/LightVariant.h"
 using namespace NS::LightVariant;
 
 using TagData = uint8_t;

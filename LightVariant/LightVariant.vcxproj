@@ -130,11 +130,11 @@
     <ClCompile Include="LightVariant.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\LightVariant.h" />
-    <ClInclude Include="include\T_BaseVariantObject.h" />
-    <ClInclude Include="include\T_Policy.h" />
-    <ClInclude Include="include\T_ObjectHeader.h" />
-    <ClInclude Include="include\T_VariantObject.h" />
+    <ClInclude Include="include\NS\LightVariant\LightVariant.h" />
+    <ClInclude Include="include\NS\LightVariant\T_BaseVariantObject.h" />
+    <ClInclude Include="include\NS\LightVariant\T_ObjectHeader.h" />
+    <ClInclude Include="include\NS\LightVariant\T_Policy.h" />
+    <ClInclude Include="include\NS\LightVariant\T_VariantObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
