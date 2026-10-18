@@ -8,7 +8,7 @@
 namespace NS::LightVariant {
 
 	template<detail::Concept::C_IsHeader TyHeader, detail::Concept::C_IsPolicy TyPolicy>
-	class T_VariantObject {
+	class alignas(TyPolicy::getAlign()) T_VariantObject {
 	public:
 		using HeaderType = TyHeader;
 		using PolicyType = TyPolicy;
