@@ -32,9 +32,10 @@ namespace NS::LightVariant {
 
 		// T_VariantObject‚Æ‚µ‚ÄŽg‚¦‚é‚©‚Ç‚¤‚©
 		template<typename T>
-		concept C_IsVariantObject = 
+		concept C_IsVariantObject =
 			std::is_trivially_copyable_v<T> &&
 			std::is_base_of_v<T_BaseVariantObject<typename T::HeaderType, typename T::PolicyType, T::_header>, T> &&
+			(alignof(T) <= T::PolicyType::getAlign()) &&
 			(sizeof(T) <= T::PolicyType::getObjectSize());
 
 	} // namespace Concept

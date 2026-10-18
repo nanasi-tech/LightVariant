@@ -39,8 +39,8 @@ enum class Tag : TagData {
 	Array,
 };
 
-using MyPolicy				= T_Policy<16, class MyPolicyType>;      // 1個目の値は最大バイト数を示す。2個目の値は識別用
-using MyHeader				= T_ObjectHeader<Tag>;                   // C_IsHeaderの条件を満たせば独自に定義できます
+using MyPolicy				= T_Policy<16, class MyPolicyType, 8>;   // 最大 `16 byte` の MyPolicyType に属する アラインが `8 byte境界またはそれ以下` である 
+using MyHeader				= T_ObjectHeader<Tag>;                   s// C_IsHeaderの条件を満たせば独自に定義できます
 using MyVariantObject		= T_VariantObject<MyHeader, MyPolicy>;   // 型を消去した後はこのオブジェクトを通してデータを使うことになると思います
 
 ```

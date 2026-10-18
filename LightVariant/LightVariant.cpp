@@ -13,7 +13,7 @@ trivially copyableが条件です。
 
 Compoundで型消去して参照を効率よく保持するというものを開発していたのですが
 全部reinterpret_castだったので
-せめてもの何か保障してくれるものがほしいな、とそういう風に思って徒然なるママに作ったものです
+せめてもの何か保障してくれるものがほしいな、とそういう風に思って徒然なるままに作ったものです
 参照を保持するとかには向いてるんじゃないですかね、stringとかは持てませんけど
 
 */
@@ -33,7 +33,7 @@ enum class Tag : TagData {
 	Array,
 };
 
-using MyPolicy				= T_Policy<16, class MyPolicyType>;
+using MyPolicy				= T_Policy<16, class MyPolicyType, 8>;		// 最大 `16 byte` の MyPolicyType に属する アラインが `8 byte境界またはそれ以下` である 
 using MyHeader				= T_ObjectHeader<Tag>;						// C_IsHeaderの条件を満たせば独自に定義できます
 using MyVariantObject		= T_VariantObject<MyHeader, MyPolicy>;
 
@@ -102,7 +102,7 @@ int main() {
 	std::cout << "Int64 ( Tag: " << (uint64_t)r_i64.getHeader().getTag() << " ) " << r_i64.value << std::endl;
 	std::cout << "Array ( Tag: " << (uint64_t)r_arr.getHeader().getTag() << " ) " << "Length: " << r_arr.length << std::endl;
 
-	std::cout << "\ntry_cast test ( 0 = succes, 1 = we have some bug )" << std::endl;
+	std::cout << "\ntry_cast test ( 0 = >> KEIKAKU DOORI <<, 1 = we have some bug )" << std::endl;
 	std::cout << "Int8 to Int64 " << (bool)obj_i8.try_cast<Sample_Int64>() << std::endl;
 	std::cout << "Arry to Int32 " << (bool)obj_arr.try_cast<Sample_Int32>() << std::endl;
 
