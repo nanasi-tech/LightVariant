@@ -58,6 +58,7 @@ public:
 # サンプル ( 最低限 )
 ```C++
 #include "LightVariant.h"
+#include <iostream>
 
 using namespace NS::LightVariant;
 
